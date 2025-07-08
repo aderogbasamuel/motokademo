@@ -14,22 +14,23 @@ import toast, { Toaster } from "react-hot-toast";
 // import VerificationSuccess from "./features/auth/VerificationSuccess";
 // import AddCar from "./features/car/AddCar.jsx";
 import Dashboard from "./features/dashboard/Dashboard.jsx";
-// import RenewLicense from "./features/licenses/RenewLicense";
-// import Garage from "./features/garage/Garage.jsx";
-// import Licenses from "./features/licenses/Licenses.jsx";
+import RenewLicense from "./features/licenses/RenewLicense";
+import Garage from "./features/garage/Garage.jsx";
+import Licenses from "./features/licenses/Licenses.jsx";
 // import PaymentOptions from "./features/payment/PaymentOptions.jsx";
-// import VehiclePaper from "./features/licenses/VehiclePaper.jsx";
+import VehiclePaper from "./features/licenses/VehiclePaper.jsx";
 // import ConfirmRequest from "./components/shared/ConfirmRequest.jsx";
-// import DriversLicense from "./features/licenses/DriversLicense.jsx";
+import DriversLicense from "./features/licenses/DriversLicense.jsx";
 // import Settings from "./features/settings/Settings.jsx"
-// import PlateNumber from "./features/licenses/PlateNumber.jsx";
-// import PlateDetails from "./features/licenses/platenumber/PlateDetails.jsx";
-// import LocalGovPaper from "./features/licenses/LocalGovPaper.jsx";
-// import TintPermit from "./features/licenses/TintPermit.jsx";
-// import IntlDriverLicense from "./features/licenses/IntlDriverLicense.jsx";
-// import TrafficRules from "./features/trafficrules/TrafficRules.jsx";
+import PlateNumber from "./features/licenses/PlateNumber.jsx";
+import PlateDetails from "./features/licenses/platenumber/PlateDetails.jsx";
+import LocalGovPaper from "./features/licenses/LocalGovPaper.jsx";
+import TintPermit from "./features/licenses/TintPermit.jsx";
+import IntlDriverLicense from "./features/licenses/IntlDriverLicense.jsx";
+import TrafficRules from "./features/trafficrules/TrafficRules.jsx";
 // import AuthLayout from "./features/auth/AuthLayout.jsx";
 import AppLayout from "./components/AppLayout";
+import Errorpage from "./404page.jsx";
 // import GuestRoute from "./components/GuestRoute";
 // import ScrollToTop from "./components/scrollToTop.jsx";
 
@@ -92,12 +93,14 @@ export default function App() {
 
           {/* Protected Routes */}
           <Route element={<AppLayout />}>
+
             <Route path="dashboard" element={<Dashboard />} />
             {/* <Route path="add-car" element={<AddCar />} /> */}
-            {/* <Route path="licenses">
+              <Route path="licenses" >
+
               <Route index element={<Licenses />} />
               <Route path="renew" element={<RenewLicense />} />
-              <Route path="documents" element={<VehiclePaper />} />
+              <Route path="documents" element={<VehiclePaper/>} />
               <Route path="drivers-license" element={<DriversLicense />} />
               <Route path="plate-number" element={<PlateNumber />} />
               <Route path="plate-number/:type" element={<PlateDetails />} />
@@ -110,11 +113,13 @@ export default function App() {
                 path="international-driver's-license"
                 element={<IntlDriverLicense />}
               />
-              <Route path="confirm-request" element={<ConfirmRequest />} />
-            </Route> */}
-            {/* <Route path="garage" element={<Garage />} />
+              {/* <Route path="confirm-request" element={<ConfirmRequest />} /> */}
+            </Route>
+
+            
+             <Route path="garage" element={<Garage />} />
             <Route path="traffic-rules" element={<TrafficRules />} />
-            <Route
+            {/*<Route
               path="payment"
               element={
                 <PaymentOptions availableBalance={3000} renewalCost={1000} />
@@ -124,6 +129,8 @@ export default function App() {
               <Route index element={<Settings />} />
             </Route> */}
           </Route>
+          <Route path="*" element={<Errorpage/>} />
+
         </Routes>
       </BrowserRouter>
       // <Toaster

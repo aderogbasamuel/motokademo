@@ -73,17 +73,17 @@ export default function QuickActions() {
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {quickActions.map((action, index) => (
-          <div
-          key={index}
-                      className="group relative flex h-[161px] flex-col justify-between rounded-3xl bg-white px-2 sm:px-4 py-6 will-change-transform hover:border-2 hover:border-[#45A1F2] hover:shadow-lg border-2 border-transparent"
+          // <div
+          // key={index}
+          //             className="group relative flex h-[161px] flex-col justify-between rounded-3xl bg-white px-2 sm:px-4 py-6 will-change-transform hover:border-2 hover:border-[#45A1F2] hover:shadow-lg border-2 border-transparent"
+          //   style={{ transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)" }}
+          // >
+           <Link
+            key={index}
+            to={action.link}
+            className="group relative flex h-[161px] flex-col justify-between rounded-3xl bg-white px-2 sm:px-4 py-6 will-change-transform hover:border-2 hover:border-[#45A1F2] hover:shadow-lg border-2 border-transparent"
             style={{ transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)" }}
           >
-          {/* // <Link
-          //   key={index}
-          //   to={action.link}
-          //   className="group relative flex h-[161px] flex-col justify-between rounded-3xl bg-white px-2 sm:px-4 py-6 will-change-transform hover:border-2 hover:border-[#45A1F2] hover:shadow-lg border-2 border-transparent"
-          //   style={{ transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)" }}
-          // > */}
             <div className="flex flex-col items-start gap-y-10">
               <div
                 className="will-change-transform"
@@ -123,8 +123,8 @@ export default function QuickActions() {
                 </div>
               </div>
             </div>
-          {/* // </Link> */}
-          </div>
+           </Link>
+          // </div>
         ))}
       </div>
     </div>
