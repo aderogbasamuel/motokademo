@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { Cookie } from "lucide-react";
 import { Icon } from "@iconify/react";
 
-import { authStorage } from "../utils/authStorage";
+// import { authStorage } from "../utils/authStorage";
 
 import Avarta from "../assets/images/avarta.png";
 import Logo from "../assets/images/Logo.png";
@@ -24,11 +24,11 @@ export default function AppLayout() {
     { name: "Settings", path: "/settings" },
   ];
 
-  useEffect(() => {
-    if (!authStorage.isAuthenticated()) {
-      navigate("/auth/login", { state: { from: location }, replace: true });
-    }
-  }, [navigate, location]);
+  // useEffect(() => {
+  //   if (!authStorage.isAuthenticated()) {
+  //     navigate("/auth/login", { state: { from: location }, replace: true });
+  //   }
+  // }, [navigate, location]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
