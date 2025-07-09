@@ -149,7 +149,7 @@ export default function AppLayout() {
             <div className="flex items-center justify-between border-b border-[#F4F5FC] p-4">
               <div className="flex items-center gap-2">
                 <img src={Logo} alt="Motoka" className="h-8 w-8" />
-                <span className="text-lg font-semibold text-[#05243F]">
+                <span className="relative text-lg font-semibold text-[#05243F]">
                   Motoka
                 </span>
               </div>

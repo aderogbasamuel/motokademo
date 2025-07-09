@@ -31,6 +31,7 @@ import TrafficRules from "./features/trafficrules/TrafficRules.jsx";
 // import AuthLayout from "./features/auth/AuthLayout.jsx";
 import AppLayout from "./components/AppLayout";
 import Errorpage from "./404page.jsx";
+import CarDocuments from "./pages/CarDocuments.jsx";
 // import GuestRoute from "./components/GuestRoute";
 // import ScrollToTop from "./components/scrollToTop.jsx";
 
@@ -96,6 +97,7 @@ export default function App() {
 
             <Route path="dashboard" element={<Dashboard />} />
             {/* <Route path="add-car" element={<AddCar />} /> */}
+            <Route path="car-documents" element={<CarDocuments />} />
               <Route path="licenses" >
 
               <Route index element={<Licenses />} />
