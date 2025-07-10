@@ -20,7 +20,7 @@ export default function Dashboard() {
   // const { cars, isLoading } = userData;
   const isLoading = false; // Replace with actual loading state from your data fetching logic
   const cars = userData[0]; // Replace with actual data fetching logic
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleRenewLicense(carDetail) {
     navigate("/licenses/renew", { state: { carDetail } });

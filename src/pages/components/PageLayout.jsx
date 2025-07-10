@@ -8,7 +8,7 @@ export default function PageLayout({ children, title, subTitle }) {
   return (
     <>
       {/* Header */}
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8 min-h-full">
         <div className="relative mt-3 mb-6">
           <button
             onClick={() => navigate("/dashboard")}
@@ -28,7 +28,7 @@ export default function PageLayout({ children, title, subTitle }) {
       </div>
 
       {/* Main Content */}
-      <div className="mx-4 max-w-4xl rounded-[20px] bg-[#F9FAFC]  overflow-hidden shadow-sm sm:mx-auto ">
+      <div className="mx-4 max-w-4xl rounded-[20px] bg-[#F9FAFC]  shadow-sm sm:mx-auto ">
         {children}
       </div>
     </>

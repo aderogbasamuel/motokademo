@@ -51,7 +51,7 @@ export default function AppLayout() {
   }
 
   return (
-    <div className="flex items-center justify-center ">{/*bg-[#F4F5FC]*/}
+    <div className="flex items-center justify-center flex-col h-full">{/*bg-[#F4F5FC]*/}
       <div className="mt-4 w-full max-w-4xl">
         {/* Header Navigation */}
         <header className="sticky top-0 z-50 rounded-full bg-white shadow-sm">
@@ -208,7 +208,7 @@ export default function AppLayout() {
         </div>
 
         {/* Main Content */}
-        <main className="mx-auto max-w-7xl py-6">
+        <main className="mx-auto max-w-7xl py-6 h-full">
           <Outlet />
         </main>
 

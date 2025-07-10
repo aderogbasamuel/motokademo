@@ -20,15 +20,14 @@ export default function Dashboard() {
   // const { cars, isLoading } = userData;
   const isLoading = false; // Replace with actual loading state from your data fetching logic
   const cars = userData[0]; // Replace with actual data fetching logic
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  function handleLicence() {
+    navigate("/");
+  }
   function handleRenewLicense(carDetail) {
     navigate("/licenses/renew", { state: { carDetail } });
   }
 
-  function handleGarage() {
-    navigate("/garage");
-  }
 
   function handleAddCar() {
     navigate("/add-car");
@@ -50,7 +49,7 @@ export default function Dashboard() {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <WelcomeSection userName={'Samuell'} />
-      <NavigationTabs onGarageClick={handleGarage} activeTab="garage" />
+      <NavigationTabs onLicenseClick={handleLicence} activeTab="garage" />
 
       <div className="mb-8">
         {/* {isLoading ? (

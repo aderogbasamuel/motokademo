@@ -8,29 +8,41 @@ import DocumentList from "./components/DocumentList";
 import DocPreview from "./components/Docpreview";
 import userData from "../data/data";
 function CarDocuments() {
-  const [selectedDocument, setSelectedDocument] = useState("VehicleLicense",);
+  const [selectedDocument, setSelectedDocument] = useState("VehicleLicense");
+  const [docType, setDocType] = useState("MyCar");
+  const onMyCarClick=()=> setDocType("MyCar");
+  const onDriverLicenseClick=()=> setDocType("DriversLicense");
     // const [filteredDocument, setFilteredDocument] = useState(
     //   userData.CarDocuments,
     // );
     return ( 
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8 h-full">
             <PagesLayout
                 title="Car Documents"
                 subTitle="This is where you find all your vehicle papers e.g Vehicle License, Road worthiness and so on. "
                 // mainContentTitle="Car Documents Overview"
             >
               <div className="flex">
+                {/* side 1 */}
                 <div className="flex-1 px-4 sm:px-8  pt-6 pb-10 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_25.17%,_rgba(115,115,115,0.1)_128.52%)]">
-                  <DocumentsNav/>
+                  <DocumentsNav
+                    setDocType={setDocType} 
+                    docType={docType}
+                    onMyCarClick={onMyCarClick}
+                    onDriverLicenseClick={onDriverLicenseClick}/>
                   <DocumentPage 
                   selectedDocument={selectedDocument}
                   setSelectedDocument={setSelectedDocument}
+                  docType={docType}
+                  activeTab={docType}
                   />
                   
                 </div>
+                {/* side 2 */}
                 <div className="flex-1 px-4 sm:px-6 bg-[#F9FAFC] pt-6 pb-6">
                   <DocPreview 
                   selectedDocument={selectedDocument}
+                  docType={docType}
                   />
                 </div>
               </div>

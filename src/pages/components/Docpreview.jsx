@@ -3,6 +3,7 @@ import good from "../../assets/images/good.svg";
 import warning from "../../assets/images/warning.svg";
 import Licensesample2 from "../../assets/images/6fe45ed589cd8efebdda471557ad5d41b9a94c27.png"
 import { useState } from "react";
+import drivers from "../../assets/images/license-sample.png";
 const categories=[
         {
             key: "VehicleLicense",
@@ -29,14 +30,23 @@ const categories=[
             status: warning
         }
     ]
-function DocPreview({selectedDocument}) {
+const driversLicense = drivers;
+function DocPreview({selectedDocument,docType}) {
 const [aspect, setAspect] = useState("portrait");
-        const imageSrc= categories.find(doc => doc.key === selectedDocument)?.image || Licensesample2;
-             const handleLoad = (e) => {
+const handleLoad = (e) => {
     const { naturalWidth: w, naturalHeight: h } = e.target;
     setAspect(w > h ? "landscape" : "portrait");
-  };
-    return ( 
+};
+const Normal = () => {
+    setAspect("portrait");
+};
+const imageSrc =
+docType === "MyCar"
+? categories.find((doc) => doc.key === selectedDocument)?.image || Licensesample2
+: driversLicense;
+
+return ( 
+        // {setAspect(docType==="MyCar"?"landscape": "portrait")}
         <div className="flex flex-col items-center h-full">
             <div className="flex justify-between w-full h-fit">
                 <p className="py-2 text-sm font-semibold">Vehicle License</p>
@@ -44,8 +54,7 @@ const [aspect, setAspect] = useState("portrait");
             </div>
             <div className="w-full  px-16 py-4 flex flex-1 h-64 items-center">
             <img src={imageSrc} alt=""
-            onLoad={handleLoad}
-
+            onLoad={docType==="MyCar"?handleLoad: Normal }
              className={` shadow-2xl rounded-[7px] ${
           aspect === "landscape" ? "rotate-90 scale-150" : ""
         }`}
