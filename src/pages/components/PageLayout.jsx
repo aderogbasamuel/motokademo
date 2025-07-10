@@ -28,7 +28,7 @@ export default function PageLayout({ children, title, subTitle }) {
       </div>
 
       {/* Main Content */}
-      <div className="mx-4 max-w-4xl rounded-[20px] bg-[#F9FAFC] px-4 pt-6 pb-10 shadow-sm sm:mx-auto sm:px-8">
+      <div className="mx-4 max-w-4xl rounded-[20px] bg-[#F9FAFC]  overflow-hidden shadow-sm sm:mx-auto ">
         {children}
       </div>
     </>

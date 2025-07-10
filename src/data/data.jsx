@@ -9,11 +9,11 @@ const userData=[
         carDetails: [
             {
                 id: 1,
-                vehicle_make: "Tesla",
-                vehicle_model: "Cybertruck",
+                vehicle_make: "Mercedes-Benz",
+                vehicle_model: "Mercedes-Benz",
                 year: 2020,
                 color: "Blue",
-                plate_number: "ABC1234",
+                plate_number: "ABC123",
                 expiry_date: "2026-12-31",
             },
             {
