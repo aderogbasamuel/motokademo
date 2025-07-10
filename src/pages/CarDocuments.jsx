@@ -30,7 +30,7 @@ function CarDocuments() {
                   <DocumentPage />
                   <DocumentList/>
                 </div>
-                <div className="flex-1 px-4 sm:px-8 bg-[#F9FAFC] pt-6 pb-10">
+                <div className="flex-1 px-4 sm:px-6 bg-[#F9FAFC] pt-6 pb-6">
                   <DocPreview/>
                 </div>
               </div>
