@@ -108,3 +108,73 @@ export default function Dashboard() {
     </div>
   );
 }
+
+// import React, { useState } from "react";
+// import axios from "axios";
+
+// const Dashboard = () => {
+//   const [carQuery, setCarQuery] = useState("");
+//   const [imageUrl, setImageUrl] = useState("");
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState("");
+
+//   const fetchCarImage = async () => {
+//     setLoading(true);
+//     setError("");
+//     setImageUrl("");
+
+//     try {
+//       const response = await axios.get(
+//         `https://www.carimagery.com/api.asmx/GetImageUrl`,
+//         {
+//           params: { searchTerm: carQuery },
+//         }
+//       );
+
+//       const parser = new DOMParser();
+//       const xmlDoc = parser.parseFromString(response.data, "text/xml");
+//       const url = xmlDoc.getElementsByTagName("string")[0].textContent;
+
+//       setImageUrl(url);
+//     } catch (err) {
+//       console.error(err);
+//       setError("Could not fetch image");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="max-w-md mx-auto mt-10 p-4 border rounded-lg shadow">
+//       <h2 className="text-xl font-bold mb-4">Car Image Finder</h2>
+//       <input
+//         type="text"
+//         placeholder="e.g. Toyota Corolla"
+//         value={carQuery}
+//         onChange={(e) => setCarQuery(e.target.value)}
+//         className="w-full p-2 border rounded mb-2"
+//       />
+//       <button
+//         onClick={fetchCarImage}
+//         disabled={loading || !carQuery}
+//         className="w-full bg-blue-600 text-white p-2 rounded"
+//       >
+//         {loading ? "Searching..." : "Get Image"}
+//       </button>
+
+//       {error && <p className="text-red-500 mt-2">{error}</p>}
+
+//       {imageUrl && (
+//         <div className="mt-4">
+//           <img
+//             src={imageUrl}
+//             alt={carQuery}
+//             className="w-full h-auto object-contain rounded"
+//           />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Dashboard;

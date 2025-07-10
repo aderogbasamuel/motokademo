@@ -1,6 +1,7 @@
 import userData from "../../data/data";
 import { Icon } from "@iconify/react";
-function DocumentPage() {
+import DocumentList from "./DocumentList";
+function DocumentPage({selectedDocument, setSelectedDocument}) {
     const cars = userData[0]?.carDetails[0];
     const imageUrl=`https://www.carlogos.org/car-logos/${cars?.vehicle_make?.toLowerCase()}-logo.png`
     // console.log(cars);
@@ -38,7 +39,7 @@ function DocumentPage() {
                     {cars?.plate_number}
                 </li> */}
             <div>
-            <div className="block w-full flex items-end">
+            <div className="w-full flex items-end">
                 <label htmlFor="year" className="block mb-2 text-sm font-medium text-gray-600 w-full">Documents</label>
                 <select name="year" id="" className="h-fit text-gray-600 text-base text-sm rounded-lg block w-fit py-2.5 px-0 focus:outline-none">
                     <option selected value="2025">2025</option>
@@ -47,7 +48,11 @@ function DocumentPage() {
                     <option  value="2022">2022</option>
                 </select>
             </div>
+
             </div>
+            <DocumentList
+            selectedDocument={selectedDocument}
+            setSelectedDocument={setSelectedDocument} />
         </div>
      );
 }
