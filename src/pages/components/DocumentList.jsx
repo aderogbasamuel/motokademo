@@ -37,7 +37,7 @@ function DocumentList({selectedDocument, setSelectedDocument}) {
         {categories.map((doc) => (        
             <div
                 onClick={() => setSelectedDocument(doc.key)}
-                className={` rounded-[17px] relative overflow-hidden h-[111px] flex items-center ${selectedDocument === doc.key? " border-[#EBB850] border-3": ""}`}
+                className={` rounded-[17px] relative overflow-hidden h[111px] flex items-center aspect-[16/9] ${selectedDocument === doc.key? " border-[#EBB850] border-3": ""}`}
                 key={doc.key}
              >
                     <img src={doc.image} alt='licence' className="absolute top-0 left-0 object-contain" />
@@ -50,7 +50,7 @@ function DocumentList({selectedDocument, setSelectedDocument}) {
                 </div>
         ))}
       {/* </div> */}
-                <div className="bg-[#eaecf3] rounded-[17px] relative overflow-hidden h-[111px] flex items-center">
+                <div className="bg-[#eaecf3] rounded-[17px] relative overflow-hidden flex items-center">
                     <div className="relative h-full w-full z-10 p-4 flex flex-col justify-between">
                         <div className="w-[25px] bg-[#D2E2F0] rounded-[10px]">
                             <Icon icon="lets-icons:add-round" fontSize={24} color="#2284DB" />

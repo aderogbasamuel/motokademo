@@ -47,7 +47,7 @@ docType === "MyCar"
 
 return ( 
         // {setAspect(docType==="MyCar"?"landscape": "portrait")}
-        <div className="flex flex-col items-center h-full">
+        <div className="flex flex-col items-center h-full min-h-150">
             <div className="flex justify-between w-full h-fit">
                 <p className="py-2 text-sm font-semibold">Vehicle License</p>
                 <p className="py-2 text-red-600 text-sm font-light">Expires on May 2 2025</p>

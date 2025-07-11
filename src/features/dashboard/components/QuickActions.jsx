@@ -6,7 +6,7 @@ const quickActions = [
   {
     icon: <Icon icon="mingcute:car-fill" fontSize={30} color="#2389E3" />,
     title: "View Car\nDocuments",
-    link: "/car-documents",
+    link: "/dashboard/car-documents",
   },
   {
     icon: <Icon icon="solar:document-bold" fontSize={30} color="#2389E3" />,

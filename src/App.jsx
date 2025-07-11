@@ -21,7 +21,7 @@ import Licenses from "./features/licenses/Licenses.jsx";
 import VehiclePaper from "./features/licenses/VehiclePaper.jsx";
 // import ConfirmRequest from "./components/shared/ConfirmRequest.jsx";
 import DriversLicense from "./features/licenses/DriversLicense.jsx";
-// import Settings from "./features/settings/Settings.jsx"
+import Settings from "./features/settings/Settings.jsx"
 import PlateNumber from "./features/licenses/PlateNumber.jsx";
 import PlateDetails from "./features/licenses/platenumber/PlateDetails.jsx";
 import LocalGovPaper from "./features/licenses/LocalGovPaper.jsx";
@@ -95,9 +95,11 @@ export default function App() {
           {/* Protected Routes */}
           <Route element={<AppLayout />}>
 
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="dashboard">
             {/* <Route path="add-car" element={<AddCar />} /> */}
+            <Route index element={<Dashboard />}/>
             <Route path="car-documents" element={<CarDocuments />} />
+            </Route>
               <Route path="licenses" >
 
               <Route index element={<Licenses />} />
@@ -127,9 +129,10 @@ export default function App() {
                 <PaymentOptions availableBalance={3000} renewalCost={1000} />
               }
             />
+            */}
             <Route path="settings">
               <Route index element={<Settings />} />
-            </Route> */}
+            </Route> 
           </Route>
           <Route path="*" element={<Errorpage/>} />
 

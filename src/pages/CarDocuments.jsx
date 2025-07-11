@@ -22,7 +22,7 @@ function CarDocuments() {
                 subTitle="This is where you find all your vehicle papers e.g Vehicle License, Road worthiness and so on. "
                 // mainContentTitle="Car Documents Overview"
             >
-              <div className="flex">
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                 {/* side 1 */}
                 <div className="flex-1 px-4 sm:px-8  pt-6 pb-10 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_25.17%,_rgba(115,115,115,0.1)_128.52%)]">
                   <DocumentsNav

@@ -15,7 +15,7 @@ function LicenseDoc() {
                                                 </div>
                                 <div className="grid grid-cols-2 gap-5 mt-4">
                                     <div
-                className={` rounded-[17px] relative overflow-hidden h-[111px] flex items-center`}
+                className={` rounded-[17px] relative overflow-hidden flex items-center aspect-[16/9]`}
              >
                     <img src={drivers} alt='licence' className="absolute top-0 left-0 object-contain" />
                     <div className="relative bg-[#05243F]/61 h-full w-full z-10 p-4 flex flex-col justify-between">
