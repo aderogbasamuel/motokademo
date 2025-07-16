@@ -4,6 +4,7 @@ import warning from "../../assets/images/warning.svg";
 import Licensesample2 from "../../assets/images/6fe45ed589cd8efebdda471557ad5d41b9a94c27.png"
 import { useState } from "react";
 import drivers from "../../assets/images/license-sample.png";
+import { Icon } from "@iconify/react";
 const categories=[
         {
             key: "VehicleLicense",
@@ -31,7 +32,7 @@ const categories=[
         }
     ]
 const driversLicense = drivers;
-function DocPreview({selectedDocument,docType}) {
+function DocPreview({selectedDocument,docType,showSidebar,setShowsidebar}) {
 const [aspect, setAspect] = useState("portrait");
 const handleLoad = (e) => {
     const { naturalWidth: w, naturalHeight: h } = e.target;
@@ -48,6 +49,9 @@ docType === "MyCar"
 return ( 
         // {setAspect(docType==="MyCar"?"landscape": "portrait")}
         <div className="flex flex-col items-center h-full min-h-150">
+            <div className="flex justify-start w-full py-2 sm:hidden">
+                <Icon icon="uil:align-left" fontSize={24} color="#05243F" className="cursor-pointer" onClick={()=>setShowsidebar(true)} />
+            </div>
             <div className="flex justify-between w-full h-fit">
                 <p className="py-2 text-sm font-semibold">Vehicle License</p>
                 <p className="py-2 text-red-600 text-sm font-light">Expires on May 2 2025</p>

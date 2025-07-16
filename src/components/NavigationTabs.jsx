@@ -1,5 +1,5 @@
 import React from "react";
-
+import {motion} from "framer-motion";
 export default function NavigationTabs({
   activeTab = "license",
   onLicenseClick,
@@ -7,6 +7,12 @@ export default function NavigationTabs({
 }) {
   return (
     <div className="mb-5 flex flex-wrap gap-3 sm:gap-4">
+      <motion.div
+            // whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            // style={box}
+        >
+
       <button
         onClick={onLicenseClick}
         className={`rounded-full px-4 py-2 text-sm font-semibold transition-all hover:shadow-md ${
@@ -17,7 +23,12 @@ export default function NavigationTabs({
       >
         Licence Status
       </button>
-
+      </motion.div>
+      <motion.div
+            // whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            // style={box}
+        >
       <button
         onClick={onGarageClick}
         className={`rounded-full px-4 py-2 text-sm font-semibold transition-all hover:shadow-md ${
@@ -28,7 +39,13 @@ export default function NavigationTabs({
       >
         Garage
       </button>
-
+      </motion.div>
+      {/* Placeholder for future tabs */}
+      <motion.div
+            // whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            // style={box}
+        > 
       <button
         disabled
         className="relative rounded-full bg-[#E1E5EE] px-4 py-2 text-sm font-semibold text-[#697C8C] transition-all hover:bg-[#d1d6e0] hover:shadow-md"
@@ -38,6 +55,7 @@ export default function NavigationTabs({
           Coming Soon
         </span>
       </button>
+      </motion.div>
     </div>
   );
 }

@@ -2,11 +2,11 @@ import userData from "../../data/data";
 import { Icon } from "@iconify/react";
 import DocumentList from "./DocumentList";
 import LicenseDoc from "./drivers license/licenseDoc";
-function DocumentPage({selectedDocument, setSelectedDocument,docType}) {
+function DocumentPage({selectedDocument, setSelectedDocument,docType,showsidebar, setShowsidebar}) {
     const cars = userData[0]?.carDetails[0];
     const imageUrl=`https://www.carlogos.org/car-logos/${cars?.vehicle_make?.toLowerCase()}-logo.png`
     return ( 
-        <div>
+        <div className="">
                 
                 {/* <li className="flex ites-center w-fit">
                     <img src={imageUrl} alt={cars?.vehicle_make} className="h-6 w-6 object-contain border"/>
@@ -14,7 +14,8 @@ function DocumentPage({selectedDocument, setSelectedDocument,docType}) {
                 </li> */}
                 {docType === "MyCar" ? (
                     <div>
-                        <div><div className="flex items-center justify-between bg-[#45A1F2] rounded-[10px] w-fit gap-10 px-4 py-2.5 pe-6">
+                        <div>
+                          <div className="flex items-center justify-between bg-[#45A1F2] rounded-[10px] w-fit gap-10 px-4 py-2.5 pe-6">
                           <div className="flex items-center gap-2">
                             <div className="">
                               <img
@@ -47,6 +48,8 @@ function DocumentPage({selectedDocument, setSelectedDocument,docType}) {
                         <DocumentList
                             selectedDocument={selectedDocument}
                             setSelectedDocument={setSelectedDocument} 
+                            showsidebar={showsidebar}
+                            setShowsidebar={setShowsidebar} 
                         />
                     </div>
                     ):(

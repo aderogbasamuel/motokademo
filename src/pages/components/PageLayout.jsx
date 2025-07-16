@@ -1,10 +1,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-
+import { useState, useEffect } from "react";
 
 export default function PageLayout({ children, title, subTitle }) {
-  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      const checkIfMobile = () => {
+        setIsMobile(window.innerWidth < 768)
+      }
+  
+      // Initial check
+      checkIfMobile()
+  
+      // Add event listener
+      window.addEventListener("resize", checkIfMobile)
+  
+      // Cleanup
+      return () => window.removeEventListener("resize", checkIfMobile)
+    }, [])
+  
   return (
     <>
       {/* Header */}
