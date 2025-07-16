@@ -10,7 +10,7 @@ import userData from "../data/data";
 function CarDocuments() {
   const [selectedDocument, setSelectedDocument] = useState("VehicleLicense");
   const [docType, setDocType] = useState("MyCar");
-  const [showsidebar, setShowsidebar] = useState(false);
+  const [showsidebar, setShowsidebar] = useState(true);
   console.log(showsidebar)
   const onMyCarClick=()=> setDocType("MyCar");
   const onDriverLicenseClick=()=> setDocType("DriversLicense");
