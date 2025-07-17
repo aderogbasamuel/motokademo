@@ -1,0 +1,51 @@
+import product1 from '../assets/images/3f7adbdd7c0244bc472649798d8b21efd639cdc8.png'
+import product2 from '../assets/images/36aec8f04cda262fb7ec76417af70265ca7bcaad.png'
+// import product3 from '../assets/images/669d6a7c9f9ac467e124d485ca1c7e9af1670bb7.png'
+import product3 from '../assets/images/a2d8392aa6d935c5c1e1d98dd3f20f5cb3218542.png'
+import product4 from '../assets/images/71558b96d05ebfeb43639ea986675be385711c4a.png'
+import product5 from '../assets/images/a20448cd8506f636466d288b6fce22bfb1037c6e.png'
+const ProductsData=[
+    {
+        id: 1,
+        title: 'Engine Oil',
+        description: 'Mobil 1 5 liters Synthetic Engine Oil',
+        price: 'N26,000',
+        imageUrl: product1,
+    },
+    {
+        id: 2,
+        title: 'Car Tyre',
+        description: 'Austone Tyres - 205 - 55 R16C',
+        price: '₦68,500',
+        imageUrl: product2,
+    },
+    {
+        id: 3,
+        title: 'Car Wash',
+        description: 'High Pressure Multi-purpose Car Washer',
+        price: '₦40,000',
+        imageUrl: product3,
+    },
+    {
+        id: 4,
+        title: 'Car Wash',
+        description: 'High Pressure Multi-purpose Car Washer',
+        price: '₦40,000',
+        imageUrl: product4,
+    },
+    {
+        id: 5,
+        title: 'Car Tyre',
+        description: 'Austone Tyres - 205 - 55 R16C',
+        price: '₦68,500',
+        imageUrl: product5,
+    },
+    {
+        id: 6,
+        title: 'Engine Oil',
+        description: 'Mobil 1 5 liters Synthetic Engine Oil',
+        price: 'N26,000',
+        imageUrl: product1,
+    },
+]
+export default ProductsData

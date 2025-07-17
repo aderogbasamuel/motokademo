@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import LadipoLayout from "./components/LadipoLayout";
 import { ChevronLeft, Cog, Sparkles, Menu } from "lucide-react"
 import Categories from "./components/Categories";
+import ProductsList from "./components/productsList";
 function Ladipo() {
     return ( 
         <LadipoLayout
@@ -79,6 +80,7 @@ function Ladipo() {
             </div>
         </div>
         <Categories/>
+        <ProductsList/>
       </div>
     </LadipoLayout>
 
