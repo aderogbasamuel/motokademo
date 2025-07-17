@@ -1,9 +1,14 @@
 import { Icon } from "@iconify/react";
 import LadipoLayout from "./components/LadipoLayout";
-import { ChevronLeft, Cog, Sparkles, Menu } from "lucide-react"
+import { ChevronLeft, Cog, Sparkles, Menu, Search } from "lucide-react"
 import Categories from "./components/Categories";
 import ProductsList from "./components/productsList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import ProductModal from "./components/modal";
 function Ladipo() {
+  const [selectedProduct, setSelectedProduct]=useState(null)
+  const [showModal,setShowModal]=useState(false)
     return ( 
         <LadipoLayout
       title="Ladipo"
@@ -57,16 +62,20 @@ function Ladipo() {
           </Link>
         ))}
       </div> */}
-      <div>
+      
+
+        {showModal?(
+          <ProductModal selectedProduct={selectedProduct}/>
+        ):(
+          <>
+          <div className="flex flex-col">
         <div className="flex justify-between items-center border-b-2 border-[#05243F0D] pb-5 px-4 sm:px-5">
 
             <div className="bg-[#E9EDF6] w-fit rounded-full p-1 text-[13px] flex items-center gap-2 ps-4">
-                <Icon
-                    icon="ri:notification-4-fill"                
-                    fontSize={20}
-                    className="text-[#45A1F2]"
+                <Search
+                  className="text-[#45A1F2]"
                 />
-                <input type="text" placeholder="Search"/>
+                <input type="text" placeholder="Search" className="outline-0 border-none "/>
                 <button className="bg-[#45A1F2] px-4 py-2 rounded-full text-white">Search</button>
             </div>
             <div className="flex items-center gap-2">
@@ -78,10 +87,17 @@ function Ladipo() {
             </button>
           </div>
             </div>
-        </div>
+        </div >
         <Categories/>
-        <ProductsList/>
+        <ProductsList 
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+        setShowModal={setShowModal}
+        />
       </div>
+        </>
+        )
+        }
     </LadipoLayout>
 
      );

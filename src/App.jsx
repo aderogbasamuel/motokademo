@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 // } from "@tanstack/react-query";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import toast, { Toaster } from "react-hot-toast";
-
+import './App.css';
 // import SignIn from "./pages/SignIn.jsx";
 // import SignUp from "./pages/SignUp.jsx";
 // import Verification from "./pages/Verification.jsx";

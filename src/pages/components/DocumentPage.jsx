@@ -15,7 +15,7 @@ function DocumentPage({selectedDocument, setSelectedDocument,docType,showsidebar
                 {docType === "MyCar" ? (
                     <div>
                         <div>
-                          <div className="flex items-center justify-between bg-[#45A1F2] rounded-[10px] w-fit gap-10 px-4 py-2.5 pe-6">
+                          <div className="flex items-center justify-between bg-[#45A1F2] rounded-[10px] w-fit gap-10 px-4 py-2.5 pe-6 hover:bg-[#1b6dbd]">
                           <div className="flex items-center gap-2">
                             <div className="">
                               <img

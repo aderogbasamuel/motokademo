@@ -70,7 +70,7 @@ return (
             </div>
             <div className="flex justify-between w-full max-h-full px-2 pt-4 pb-0 h-fit">
                 <button className="rounded-full px-6 py-3 bg-[#697B8C4A] text-sm text-[#697C8C]">Share</button>
-                <button className="rounded-full px-6 py-3 bg-[#2284DB] text-sm text-[#ffffff]">Download License</button>
+                <button className="rounded-full px-6 py-3 bg-[#2284DB] text-sm text-[#ffffff] hover:bg-[#1b6dbd]">Download License</button>
             </div>
         </div>
      );

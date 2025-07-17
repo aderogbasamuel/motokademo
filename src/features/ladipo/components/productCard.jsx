@@ -1,8 +1,12 @@
 import { Plus } from "lucide-react";
 
-function ProductCard({title,imageUrl,description,price}) {
+function ProductCard({title,imageUrl,description,price,product,setSelectedProduct,setShowModal}) {
     return ( 
-        <div className="flex flex-col  text-[13px] w-[187px]">
+        <div className="flex flex-col  text-[13px] w-[187px]"
+         onClick={()=>{
+            setSelectedProduct(product) 
+            setShowModal(true)
+         }}>
             <div className="border-1 border-[#D3D9DE4D] rounded-[10px] p-5 h-[189px] relative">
                 <div className="bg-[#697B8C4A] text-white rounded-[5px] w-fit absolute right-3 top-3"><Plus/></div>
                 <img src={imageUrl} alt="" />

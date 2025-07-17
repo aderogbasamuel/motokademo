@@ -18,7 +18,7 @@ function CarDocuments() {
     //   userData.CarDocuments,
     // );
     return ( 
-        <div className="px-0 sm:px-6 lg:px-8 h-full">
+        <div className="px-0 sm:px-6 lg:px-8 h-full pb-5">
             <PagesLayout
                 title="Car Documents"
                 subTitle="This is where you find all your vehicle papers e.g Vehicle License, Road worthiness and so on. "
@@ -42,7 +42,7 @@ function CarDocuments() {
                   />
                 </div>
                 {/* side 2 */}
-                <div className={`flex-1 px-4 sm:px-6 bg-[#F9FAFC] pt-6 pb-6 ${showsidebar? "w-0 overflow-hidden relative -z-10":"w-full z-300 flex overflow-hidden"} `}>
+                <div className={`flex-1 px-4 sm:px-6 bg-[#F9FAFC] pt-6 pb-6 ${showsidebar? "w-0 overflow-hidden relative -z-10":"w-full z-300 flex overflow-hidden"} sm:z-10  sm:w-full`}>
                   <DocPreview 
                   selectedDocument={selectedDocument}
                   docType={docType}

@@ -21,7 +21,7 @@ export default function LadipoLayout({ children, title, subTitle, mainContentTit
     <>
       {/* Header */}
       <div className="px-4 sm:px-6 lg:px-8">
-        <div className="relative mb-3 flex justify-between">
+        <div className="relative mb-3 justify-between grid grid-cols-3">
           <button
             onClick={() => navigate("/dashboard")}
             className=" flex h-8 w-8 items-center justify-center rounded-full bg-[#E1E6F4] text-[#697C8C] transition-colors hover:bg-[#E5F3FF]"
@@ -36,7 +36,7 @@ export default function LadipoLayout({ children, title, subTitle, mainContentTit
               {subTitle}
             </p>
           </div>
-          <div className="flex cursor-pointer items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm sm:gap-3 sm:px-4 sm:py-2">
+          <div className=" justify-self-end flex cursor-pointer items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm sm:gap-3 sm:px-4 sm:py-2 w-fit">
                     <span onClick={() => setShowBalance(!showBalance)}>
                       {showBalance ? (
                         <Icon icon="mingcute:eye-fill" fontSize={20} color="#697C8C" />
@@ -57,11 +57,12 @@ export default function LadipoLayout({ children, title, subTitle, mainContentTit
                           icon="mdi:shield-lock-outline"
                           fontSize={20}
                           color="#2389E3"
-                        /> */}
+                        /> */}NGN
                         {maskCurrency(balance)}
                         </>
                       )}
                     </span>
+
           </div>
         </div>
       </div>
