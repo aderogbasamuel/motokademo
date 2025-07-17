@@ -34,7 +34,7 @@ import Errorpage from "./404page.jsx";
 import CarDocuments from "./pages/CarDocuments.jsx";
 // import GuestRoute from "./components/GuestRoute";
 // import ScrollToTop from "./components/scrollToTop.jsx";
-
+import Ladipo from "./features/ladipo/Ladipo.jsx";
 export default function App() {
   // const queryClient = new QueryClient({
   //   queryCache: new QueryCache({
@@ -101,7 +101,6 @@ export default function App() {
             <Route path="car-documents" element={<CarDocuments />} />
             </Route>
               <Route path="licenses" >
-
               <Route index element={<Licenses />} />
               <Route path="renew" element={<RenewLicense />} />
               <Route path="documents" element={<VehiclePaper/>} />
@@ -118,6 +117,10 @@ export default function App() {
                 element={<IntlDriverLicense />}
               />
               {/* <Route path="confirm-request" element={<ConfirmRequest />} /> */}
+            </Route>
+
+            <Route path="ladipo">
+              <Route index element={<Ladipo/>}/>
             </Route>
 
             

@@ -26,7 +26,7 @@ function CarDocuments() {
             >
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 rounded-[20px] overflow-hidden relative">
                 {/* side 1 */}
-                <div className="flex-1 px-4 sm:px-8  pt-6 pb-10 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_25.17%,_rgba(115,115,115,0.1)_128.52%)]  overflow-hidden h-fit w-full absolute z-9 sm:relative">
+                <div className="flex-1 px-4 sm:px-8  pt-6 pb-10 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_25.17%,_rgba(115,115,115,0.1)_128.52%)]  overflow-hidden h-full w-full absolute z-9 sm:relative">
                   <DocumentsNav
                     setDocType={setDocType} 
                     docType={docType}
