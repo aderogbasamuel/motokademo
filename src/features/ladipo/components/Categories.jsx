@@ -10,7 +10,39 @@ function Categories() {
                 <p>See All</p>
             </div>
             <div className="flex">
-                <div className='flex gap-8'>
+                <div className='flex gap-8 overflow-hidden no-scrollbar'>
+                    <div className='flex flex-col align-center text-center'>
+                        <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
+                            <img src={product1} alt="" />
+                        </div>
+                        <div>
+                            <p className='text-[#05243F] text-[13px] '>Maintenance</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col align-center text-center'>
+                        <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
+                            <img src={product2} alt="" />
+                        </div>
+                        <div>
+                            <p className='text-[#05243F] text-[13px] '>Car Parts</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col align-center text-center'>
+                        <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
+                            <img src={product3} alt="" className='object-contain'/>
+                        </div>
+                        <div>
+                            <p className='text-[#05243F] text-[13px] '>Accessories</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col align-center text-center'>
+                        <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
+                            <img src={product4} alt="" className='object-contain'/>
+                        </div>
+                        <div className=''>
+                            <p className='text-[#05243F] text-[13px] '>Deals</p>
+                        </div>
+                    </div>
                     <div className='flex flex-col align-center text-center'>
                         <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
                             <img src={product1} alt="" />
