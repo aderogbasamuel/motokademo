@@ -14,10 +14,30 @@ const ProductsData=[
                         description: 'Mobil 1 5 liters Synthetic Engine Oil',
                         price: 'N26,000',
                         imageUrl: product1,
-                        moreDetails:{
-            keyFeatures: "Bi-Compound Technology: Combines a harder outer tread for precise steering and a softer inner tread for enhanced grip in wet conditions. Dynamic Response Technology: A hybrid aramid and nylon belt ensures optimal control and responsiveness at high speeds. Premium Touch Design: A velvet-like micro texture on the sidewall enhances the tire's appearance. Long-Lasting Tread Life: Designed for extended tread life without compromising performance.",
-        }
-                    },
+                        productDetails:{
+                            productSpecification:'265/55r20 Tyre',
+                            productDescription: "Experience superior performance and handling with the Michelin Pilot Sport 4S, a max-performance summer tire designed for sports cars and high-performance sedans. Engineered with Michelin's innovative Bi-Compound technology, this tire delivers exceptional grip and responsiveness on both dry and wet roads.",
+                            keyFeatures: [
+                                {
+                                    title: 'Bi-Compound Technology:',
+                                    text: 'Combines a harder outer tread for precise steering and a softer inner tread for enhanced grip in wet conditions.',
+
+                                },
+                                {
+                                    title: 'Dynamic Response Technology:',
+                                    text: 'A hybrid aramid and nylon belt ensures optimal control and responsiveness at high speeds.'
+                                },
+                                {
+                                    title: 'Premium Touch Design: ',
+                                    text: "A velvet-like micro texture on the sidewall enhances the tire's appearance."
+                                },
+                                {
+                                    title: 'Long-Lasting Tread Life: ',
+                                    text: 'Designed for extended tread life without compromising performance.'
+                                }
+        ]
+                    }
+                },
                     {
                         id: 2,
                         title: 'Car Tyre',

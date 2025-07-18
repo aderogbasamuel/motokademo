@@ -12,7 +12,7 @@ import './App.css';
 // import SignUp from "./pages/SignUp.jsx";
 // import Verification from "./pages/Verification.jsx";
 // import VerificationSuccess from "./features/auth/VerificationSuccess";
-// import AddCar from "./features/car/AddCar.jsx";
+import AddCar from "./features/car/AddCar.jsx";
 import Dashboard from "./features/dashboard/Dashboard.jsx";
 import RenewLicense from "./features/licenses/RenewLicense";
 import Garage from "./features/garage/Garage.jsx";
@@ -28,13 +28,14 @@ import LocalGovPaper from "./features/licenses/LocalGovPaper.jsx";
 import TintPermit from "./features/licenses/TintPermit.jsx";
 import IntlDriverLicense from "./features/licenses/IntlDriverLicense.jsx";
 import TrafficRules from "./features/trafficrules/TrafficRules.jsx";
+import Ladipo from "./features/ladipo/Ladipo.jsx";
+import Notification from "./pages/notification.jsx";
 // import AuthLayout from "./features/auth/AuthLayout.jsx";
 import AppLayout from "./components/AppLayout";
 import Errorpage from "./404page.jsx";
 import CarDocuments from "./pages/CarDocuments.jsx";
 // import GuestRoute from "./components/GuestRoute";
 // import ScrollToTop from "./components/scrollToTop.jsx";
-import Ladipo from "./features/ladipo/Ladipo.jsx";
 export default function App() {
   // const queryClient = new QueryClient({
   //   queryCache: new QueryCache({
@@ -89,15 +90,16 @@ export default function App() {
                 </GuestRoute>
               }
             />
-          </Route>
-          <Route path="add-car" element={<AddCar />} /> */}
+          </Route>*/}
+          <Route path="add-car" element={<AddCar />} /> 
 
           {/* Protected Routes */}
           <Route element={<AppLayout />}>
 
+            {/* <Route path="add-car" element={<AddCar/>} /> */}
             <Route path="dashboard">
-            {/* <Route path="add-car" element={<AddCar />} /> */}
             <Route index element={<Dashboard />}/>
+            <Route path="notification" element={<Notification/>}/>
             <Route path="car-documents" element={<CarDocuments />} />
             </Route>
               <Route path="licenses" >

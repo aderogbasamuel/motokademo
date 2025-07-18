@@ -5,12 +5,13 @@
   text-align: center;
 } */
 .customScroll::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 
 }
  
 .customScroll::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.824);
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.824); */
+  background-color: #F4F5FC;
 }
  
 .customScroll::-webkit-scrollbar-thumb {

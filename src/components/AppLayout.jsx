@@ -49,7 +49,7 @@ export default function AppLayout() {
   function handleHome() {
     navigate("/");
   }
-
+ 
   return (
     <div className="flex items-center justify-center flex-col h-full">{/*bg-[#F4F5FC]*/}
       <div className="mt-4 w-full max-w-4xl">
@@ -110,7 +110,7 @@ export default function AppLayout() {
 
               {/* User Actions */}
               <div className="hidden items-center gap-4 md:flex">
-                <div className="relative">
+                <div className="relative" onClick={()=>navigate("/dashboard/notification")}>
                   <Icon
                     icon="ri:notification-4-fill"
                     fontSize={20}
