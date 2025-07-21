@@ -10,7 +10,7 @@ function Categories() {
                 <p>See All</p>
             </div>
             <div className="flex">
-                <div className='flex gap-8 overflow-hidden no-scrollbar'>
+                <div className='flex gap-8 overflow-auto no-scrollbar'>
                     <div className='flex flex-col align-center text-center'>
                         <div className='w-[84px] border-1 border-[#D3D9DE4D] h-[60px] overflow-hidden rounded-[90px] mb-2 '>
                             <img src={product1} alt="" />

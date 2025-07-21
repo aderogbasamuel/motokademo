@@ -6,9 +6,33 @@ import ProductsList from "./components/productsList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import ProductModal from "./components/modal";
+import SearchBar from "./components/Searchbar";
+import ProductsData from "../../data/Products";
 function Ladipo() {
   const [selectedProduct, setSelectedProduct]=useState(null)
   const [showModal,setShowModal]=useState(false)
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredRules, setFilteredRules] = useState(
+    ""
+  );
+  const handleSearch = (query) => {
+  const lowerQuery = query.toLowerCase();
+
+  // Flatten all productInfo arrays across categories
+  const allProducts = ProductsData.flatMap(category => category.productInfo);
+
+  // Now filter based on title, description, or keywords
+  const filtered = allProducts.filter(product => {
+    const inTitle = product.title.toLowerCase().includes(lowerQuery);
+    const inDescription = product.description?.toLowerCase().includes(lowerQuery);
+    const inKeywords = product.keywords?.some(keyword =>
+      keyword.toLowerCase().includes(lowerQuery)
+    );
+    return inTitle || inDescription || inKeywords;
+  });
+
+  setFilteredRules(filtered);
+};
     return ( 
         <LadipoLayout
       title="Ladipo"
@@ -72,14 +96,13 @@ function Ladipo() {
           <>
           <div className="flex flex-col">
         <div className="flex justify-between items-center border-b-2 border-[#05243F0D] pb-5 px-4 sm:px-5">
-
-            <div className="bg-[#E9EDF6] w-fit rounded-full p-1 text-[13px] flex items-center gap-2 ps-4">
-                <Search
-                  className="text-[#45A1F2]"
-                />
-                <input type="text" placeholder="Search" className="outline-0 border-none "/>
-                <button className="bg-[#45A1F2] px-4 py-2 rounded-full text-white">Search</button>
-            </div>
+           
+            <SearchBar
+                          onSearch={handleSearch}
+                          searchTerm={searchTerm}
+                          setSearchTerm={setSearchTerm}
+                        />
+            {/* </div> */}
             <div className="flex items-center gap-2">
             <p className="text-[#00000040] text-[13px]">Don’t know what to buy?</p>
             <div className="text-[13px]">
@@ -95,6 +118,7 @@ function Ladipo() {
         selectedProduct={selectedProduct}
         setSelectedProduct={setSelectedProduct}
         setShowModal={setShowModal}
+        filteredRules={filteredRules}
         />
       </div>
         </>

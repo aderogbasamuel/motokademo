@@ -14,6 +14,7 @@ const ProductsData=[
                         description: 'Mobil 1 5 liters Synthetic Engine Oil',
                         price: 'N26,000',
                         imageUrl: product1,
+                        keywords: ["oil","engine","lubricant","mobil","engine oil"],
                         productDetails:{
                             productSpecification:'265/55r20 Tyre',
                             productDescription: "Experience superior performance and handling with the Michelin Pilot Sport 4S, a max-performance summer tire designed for sports cars and high-performance sedans. Engineered with Michelin's innovative Bi-Compound technology, this tire delivers exceptional grip and responsiveness on both dry and wet roads.",
