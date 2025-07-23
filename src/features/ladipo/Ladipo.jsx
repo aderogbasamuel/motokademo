@@ -12,23 +12,22 @@ function Ladipo() {
   const [selectedProduct, setSelectedProduct]=useState(null)
   const [showModal,setShowModal]=useState(false)
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory,setSelectedCategory]=useState("Car Parts");
   const [filteredRules, setFilteredRules] = useState(
     ""
   );
-  const handleSearch = (query) => {
-  const lowerQuery = query.toLowerCase();
+  const handleSearch = () => {
+  const lowerQuery = searchTerm.toLowerCase();
 
-  // Flatten all productInfo arrays across categories
-  const allProducts = ProductsData.flatMap(category => category.productInfo);
-
-  // Now filter based on title, description, or keywords
-  const filtered = allProducts.filter(product => {
+  const filtered = ProductsData.filter(product => {
+    const inCategory = product.category === selectedCategory;
     const inTitle = product.title.toLowerCase().includes(lowerQuery);
     const inDescription = product.description?.toLowerCase().includes(lowerQuery);
     const inKeywords = product.keywords?.some(keyword =>
       keyword.toLowerCase().includes(lowerQuery)
     );
-    return inTitle || inDescription || inKeywords;
+
+    return inCategory && (inTitle || inDescription || inKeywords);
   });
 
   setFilteredRules(filtered);
@@ -113,10 +112,15 @@ function Ladipo() {
           </div>
             </div>
         </div >
-        <Categories/>
+        <Categories 
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        />
         <ProductsList 
         selectedProduct={selectedProduct}
         setSelectedProduct={setSelectedProduct}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
         setShowModal={setShowModal}
         filteredRules={filteredRules}
         />
