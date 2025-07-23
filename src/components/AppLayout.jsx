@@ -110,7 +110,7 @@ export default function AppLayout() {
 
               {/* User Actions */}
               <div className="hidden items-center gap-4 md:flex">
-                <div className="relative">
+                <div className="relative " onClick={()=>navigate("/ladipo/cart-page")}>
                   <Icon icon="mynaui:cart-solid" width="24" height="24" color="#2284DB" />
                   <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#FDB022] text-[10px] font-medium text-white">
                     1
