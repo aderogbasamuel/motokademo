@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 // } from "@tanstack/react-query";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import toast, { Toaster } from "react-hot-toast";
-import './App.css';
+import "./App.css";
 // import SignIn from "./pages/SignIn.jsx";
 // import SignUp from "./pages/SignUp.jsx";
 // import Verification from "./pages/Verification.jsx";
@@ -21,7 +21,7 @@ import Licenses from "./features/licenses/Licenses.jsx";
 import VehiclePaper from "./features/licenses/VehiclePaper.jsx";
 // import ConfirmRequest from "./components/shared/ConfirmRequest.jsx";
 import DriversLicense from "./features/licenses/DriversLicense.jsx";
-import Settings from "./features/settings/Settings.jsx"
+import Settings from "./features/settings/Settings.jsx";
 import PlateNumber from "./features/licenses/PlateNumber.jsx";
 import PlateDetails from "./features/licenses/platenumber/PlateDetails.jsx";
 import LocalGovPaper from "./features/licenses/LocalGovPaper.jsx";
@@ -34,6 +34,7 @@ import Notification from "./pages/notification.jsx";
 import AppLayout from "./components/AppLayout";
 import Errorpage from "./404page.jsx";
 import CarDocuments from "./pages/CarDocuments.jsx";
+import CartPage from "./features/ladipo/CartPage.jsx";
 // import GuestRoute from "./components/GuestRoute";
 // import ScrollToTop from "./components/scrollToTop.jsx";
 export default function App() {
@@ -52,12 +53,12 @@ export default function App() {
   return (
     // <QueryClientProvider client={queryClient}>
     //   <ReactQueryDevtools initialIsOpen={false} />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
-          {/* Auth Routes */}
-          {/* <Route path="auth" element={<AuthLayout />}>
+        {/* Auth Routes */}
+        {/* <Route path="auth" element={<AuthLayout />}>
             <Route
               path="login"
               element={
@@ -91,109 +92,104 @@ export default function App() {
               }
             />
           </Route>*/}
-          <Route path="add-car" element={<AddCar />} /> 
+        <Route path="add-car" element={<AddCar />} />
 
-          {/* Protected Routes */}
-          <Route element={<AppLayout />}>
-
-            {/* <Route path="add-car" element={<AddCar/>} /> */}
-            <Route path="dashboard">
-            <Route index element={<Dashboard />}/>
-            <Route path="notification" element={<Notification/>}/>
+        {/* Protected Routes */}
+        <Route element={<AppLayout />}>
+          {/* <Route path="add-car" element={<AddCar/>} /> */}
+          <Route path="dashboard">
+            <Route index element={<Dashboard />} />
+            <Route path="notification" element={<Notification />} />
             <Route path="car-documents" element={<CarDocuments />} />
-            </Route>
-              <Route path="licenses" >
-              <Route index element={<Licenses />} />
-              <Route path="renew" element={<RenewLicense />} />
-              <Route path="documents" element={<VehiclePaper/>} />
-              <Route path="drivers-license" element={<DriversLicense />} />
-              <Route path="plate-number" element={<PlateNumber />} />
-              <Route path="plate-number/:type" element={<PlateDetails />} />
-              <Route
-                path="local-government-papers"
-                element={<LocalGovPaper />}
-              />
-              <Route path="tint-permit" element={<TintPermit />} />
-              <Route
-                path="international-driver's-license"
-                element={<IntlDriverLicense />}
-              />
-              {/* <Route path="confirm-request" element={<ConfirmRequest />} /> */}
-            </Route>
+          </Route>
+          <Route path="licenses">
+            <Route index element={<Licenses />} />
+            <Route path="renew" element={<RenewLicense />} />
+            <Route path="documents" element={<VehiclePaper />} />
+            <Route path="drivers-license" element={<DriversLicense />} />
+            <Route path="plate-number" element={<PlateNumber />} />
+            <Route path="plate-number/:type" element={<PlateDetails />} />
+            <Route path="local-government-papers" element={<LocalGovPaper />} />
+            <Route path="tint-permit" element={<TintPermit />} />
+            <Route
+              path="international-driver's-license"
+              element={<IntlDriverLicense />}
+            />
+            {/* <Route path="confirm-request" element={<ConfirmRequest />} /> */}
+          </Route>
 
-            <Route path="ladipo">
-              <Route index element={<Ladipo/>}/>
-            </Route>
+          <Route path="ladipo">
+            <Route index element={<Ladipo />} />
+            <Route path="cart-page" element={<CartPage />} />
+          </Route>
 
-            
-             <Route path="garage" element={<Garage />} />
-            <Route path="traffic-rules" element={<TrafficRules />} />
-            {/*<Route
+          <Route path="garage" element={<Garage />} />
+          <Route path="traffic-rules" element={<TrafficRules />} />
+          {/*<Route
               path="payment"
               element={
                 <PaymentOptions availableBalance={3000} renewalCost={1000} />
               }
             />
             */}
-            <Route path="settings">
-              <Route index element={<Settings />} />
-            </Route> 
+          <Route path="settings">
+            <Route index element={<Settings />} />
           </Route>
-          <Route path="*" element={<Errorpage/>} />
-
-        </Routes>
-      </BrowserRouter>
-      // <Toaster
-      //   position="top-right"
-      //   gutter={8}
-      //   containerStyle={{ margin: "16px" }}
-      //   toastOptions={{
-      //     success: {
-      //       duration: 3000,
-      //       style: {
-      //         background: "#F9FAFC",
-      //         border: "1px solid #E1E6F4",
-      //         color: "#05243F",
-      //       },
-      //       iconTheme: {
-      //         primary: "#2389E3",
-      //         secondary: "#FFFFFF",
-      //       },
-      //     },
-      //     error: {
-      //       duration: 5000,
-      //       style: {
-      //         background: "#FDF6E8",
-      //         border: "1px solid #FDB022",
-      //         color: "#05243F",
-      //       },
-      //       iconTheme: {
-      //         primary: "#FDB022",
-      //         secondary: "#FFFFFF",
-      //       },
-      //     },
-      //     loading: {
-      //       duration: Infinity,
-      //       style: {
-      //         background: "#F9FAFC",
-      //         border: "1px solid #2389E3",
-      //         color: "#05243F",
-      //       },
-      //       iconTheme: {
-      //         primary: "#2389E3",
-      //         secondary: "#F9FAFC",
-      //       },
-      //     },
-      //     style: {
-      //       fontSize: "14px",
-      //       maxWidth: "400px",
-      //       padding: "12px 16px",
-      //       borderRadius: "12px",
-      //       boxShadow:
-      //         "0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      //     },
-      //   }}
-      // />
+        </Route>
+        <Route path="*" element={<Errorpage />} />
+      </Routes>
+    </BrowserRouter>
+    // <Toaster
+    //   position="top-right"
+    //   gutter={8}
+    //   containerStyle={{ margin: "16px" }}
+    //   toastOptions={{
+    //     success: {
+    //       duration: 3000,
+    //       style: {
+    //         background: "#F9FAFC",
+    //         border: "1px solid #E1E6F4",
+    //         color: "#05243F",
+    //       },
+    //       iconTheme: {
+    //         primary: "#2389E3",
+    //         secondary: "#FFFFFF",
+    //       },
+    //     },
+    //     error: {
+    //       duration: 5000,
+    //       style: {
+    //         background: "#FDF6E8",
+    //         border: "1px solid #FDB022",
+    //         color: "#05243F",
+    //       },
+    //       iconTheme: {
+    //         primary: "#FDB022",
+    //         secondary: "#FFFFFF",
+    //       },
+    //     },
+    //     loading: {
+    //       duration: Infinity,
+    //       style: {
+    //         background: "#F9FAFC",
+    //         border: "1px solid #2389E3",
+    //         color: "#05243F",
+    //       },
+    //       iconTheme: {
+    //         primary: "#2389E3",
+    //         secondary: "#F9FAFC",
+    //       },
+    //     },
+    //     style: {
+    //       fontSize: "14px",
+    //       maxWidth: "400px",
+    //       padding: "12px 16px",
+    //       borderRadius: "12px",
+    //       boxShadow:
+    //         "0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    //     },
+    //   }}
+    // />
     // </QueryClientProvider>
   );
 }
